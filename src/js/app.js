@@ -1,5 +1,5 @@
 import { fetchFactData, extractFactText } from './data-service.js';
-import { renderFact, renderError } from './ui-manager.js';
+import { renderFact, renderError, getCurrentFactText } from './ui-manager.js';
 
 const getAndRenderFact = async () => {
     try {

@@ -20,6 +20,6 @@ function extractFactText(data) {
         id: data.id,
         text: data.text
     };
-}
+};
 
 export { fetchFactData, extractFactText };

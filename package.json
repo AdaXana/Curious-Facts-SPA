@@ -1,0 +1,25 @@
+{
+  "name": "curious-facts-spa",
+  "version": "1.0.0",
+  "description": "A Single Page Application designed to fetch and display random curious facts from an external API (uselessfacts.jsph.pl). The application implements functionality to save facts to a persistent local favorites list. It demonstrates proficiency in Fetch API, Vanilla JavaScript, DOM manipulation, Atomic Design principles, and Unit Testing with Vitest.",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdaXana/Curious-Facts-SPA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/AdaXana/Curious-Facts-SPA/issues"
+  },
+  "homepage": "https://github.com/AdaXana/Curious-Facts-SPA#readme",
+  "devDependencies": {
+    "jsdom": "^27.2.0",
+    "vitest": "^4.0.15"
+  }
+}

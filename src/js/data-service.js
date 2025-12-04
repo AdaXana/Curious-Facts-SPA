@@ -1,5 +1,5 @@
-const fetchFactData = async () => {
-    const urlAPI = "https://uselessfacts.jsph.pl/random.json?language=en";
+const fetchFactData = async (endpoint = 'random') => {
+    const urlAPI = `https://uselessfacts.jsph.pl/api/v2/facts/${endpoint}?language=en`;
     try {
         const response = await fetch(urlAPI);
         if (!response.ok) {

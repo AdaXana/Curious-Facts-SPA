@@ -1,13 +1,19 @@
+import { getFavoriteFacts } from './storage-service.js';
+
+
 function renderFact(factObject) {
-    const displayElement = document.getElementById("fact-description-display");
-    displayElement.innerText = factObject.text;
-    document.getElementById("first-fact").style.display = 'none';
-};
+    const descriptionElement = document.getElementById("fact-description-display");
+    const factContainer = document.getElementById("fact-container-display");
+    descriptionElement.innerText = factObject.text;
+    factContainer.style.display = 'block';
+}
 
 
 const renderError = (error) => {
     const displayElement = document.getElementById("fact-description-display");
+    const factContainer = document.getElementById("fact-container-display");
     displayElement.innerText = "Sorry, facts are currently unavailable.";
+    factContainer.style.display = 'block';
     console.error("Rendering Error:", error);
 };
 
@@ -17,4 +23,31 @@ function getCurrentFactText() {
     return factElement.innerText;
 };
 
-export { renderFact, renderError, getCurrentFactText };
+
+function renderFavoritesList() {
+    const favorites = getFavoriteFacts();
+    const tableBody = document.getElementById('favorites-table-body');
+    const favoritesModule = document.getElementById('favorites-container');
+
+    tableBody.innerHTML = '';
+    if (favorites.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="3">You have no saved facts yet.</td></tr>';
+        return;
+    }
+
+    const favoritesHTML = favorites.map(fact => {
+        return `
+            <tr>
+                <td>${fact.text}</td>
+                <td>
+                    <button class="btn btn-delete" data-fact-id="${fact.id}">Delete</button>
+                </td>
+            </tr>
+        `;
+    }).join('');
+    
+    tableBody.innerHTML = favoritesHTML;
+    // favoritesModule.style.display = 'block';
+}
+
+export { renderFact, renderError, getCurrentFactText, renderFavoritesList };

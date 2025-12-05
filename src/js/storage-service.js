@@ -13,7 +13,7 @@ function saveFactToLocalStorage(factObject) {
         console.warn(`Fact with ID ${factObject.id} is already in favorites.`);
         return { success: false, message: "Fact already saved." };
     }
-    favoriteFacts.push(factObject);
+    favoriteFacts.unshift(factObject);
     localStorage.setItem(storageKey, JSON.stringify(favoriteFacts));
     return { success: true, message: "Fact saved successfully." };
 };

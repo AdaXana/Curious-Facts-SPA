@@ -1,6 +1,6 @@
 import { fetchFactData, extractFactText } from './data-service.js';
-import { renderFact, renderError, getCurrentFactText, renderFavoritesList } from './ui-manager.js';
-import { saveFactToLocalStorage, getFavoriteFacts, removeFactFromLocalStorage } from './storage-service.js';
+import { renderFact, renderError,renderFavoritesList } from './ui-manager.js';
+import { saveFactToLocalStorage, removeFactFromLocalStorage } from './storage-service.js';
 
 
 let currentFact = null;
@@ -53,11 +53,11 @@ const handleDeleteFavorite = (e) => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById("btn-other-fact").addEventListener('click', () => getAndRenderFact('random'));
     getAndRenderFact('today');
+
+    document.getElementById("btn-other-fact").addEventListener('click', () => getAndRenderFact('random'));
     document.getElementById("btn-add-favs").addEventListener('click', handleAddFavorite);
     document.getElementById("btn-show-favs").addEventListener('click', handleShowFavorites);
     document.getElementById("favorites-table-body").addEventListener('click', handleDeleteFavorite);
 
-    getAndRenderFact();
 });

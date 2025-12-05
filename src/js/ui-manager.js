@@ -27,7 +27,6 @@ function getCurrentFactText() {
 function renderFavoritesList() {
     const favorites = getFavoriteFacts();
     const tableBody = document.getElementById('favorites-table-body');
-    const favoritesModule = document.getElementById('favorites-container');
 
     tableBody.innerHTML = '';
     if (favorites.length === 0) {
@@ -44,10 +43,10 @@ function renderFavoritesList() {
                 </td>
             </tr>
         `;
-    }).join('');
+    })
     
-    tableBody.innerHTML = favoritesHTML;
-    // favoritesModule.style.display = 'block';
+    tableBody.innerHTML = favoritesHTML.join('');
+    
 }
 
 export { renderFact, renderError, getCurrentFactText, renderFavoritesList };

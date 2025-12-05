@@ -10,14 +10,14 @@
 
 <body>
     <main class="global-container">
-        <h1>Welcome to Curious Facts🔍</h1>
+        <img class="header-logo" src="/src/assets/images/dyk.png" alt="Did You Know?">
         <section class="fact-container" id="fact-container-display">
             <p class="fact-description-display" id="fact-description-display"></p>
         </section>
         <section class="menu-btns-container">
-            <button class="btn" id="btn-other-fact">Show Other Fact</button>
-            <button class="btn" id="btn-add-favs">Add to Favorites</button>
-            <button class="btn" id="btn-show-favs">Show Favorites</button>
+            <button class="btn" id="btn-other-fact" aria-label="Show other fact">Show other fact</button>
+            <button class="btn" id="btn-add-favs" aria-label="Add to favorites">Add to favorites</button>
+            <button class="btn" id="btn-show-favs" aria-label="Show favorites list">Show favorites list</button>
         </section>
         <section class="favorites-container" id ="favorites-container" style="display:none;">
             <div class="favorites">
@@ -33,7 +33,7 @@
                 </table>
             </div>
         </section>
-    </main>
+    </mai>
     <script src="/src/js/app.js" type="module"></script>
 </body>
 

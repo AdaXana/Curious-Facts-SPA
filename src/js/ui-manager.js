@@ -39,7 +39,7 @@ function renderFavoritesList() {
             <tr>
                 <td>${fact.text}</td>
                 <td>
-                    <button class="btn btn-delete" data-fact-id="${fact.id}">Delete</button>
+                    <button class="btn btn-delete" data-fact-id="${fact.id}"></button>
                 </td>
             </tr>
         `;
